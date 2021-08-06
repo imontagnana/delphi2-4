@@ -37,6 +37,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 64
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Cadastro de Usu'#225'rios'
     CustomHint = BalloonHint1
     Center = True
@@ -179,12 +180,14 @@ object frmPrincipal: TfrmPrincipal
       3B14E8D9D633C09E6BAF3F17E15160CB962D58BD7AF571F7FF1FA2CF1FAA73FF
       E02F0000000049454E44AE426082}
     ShowHint = True
+    OnClick = imgUsuariosClick
   end
   object imgReceber: TImage
     Left = 104
     Top = 64
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Contas a pagar'
     CustomHint = BalloonHint1
     Center = True
@@ -352,6 +355,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 64
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Contas a receber'
     CustomHint = BalloonHint1
     Center = True
@@ -595,6 +599,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 64
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Caixa'
     CustomHint = BalloonHint1
     Center = True
@@ -739,6 +744,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 64
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     CustomHint = BalloonHint1
     Center = True
     ParentShowHint = False
@@ -917,6 +923,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 64
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     CustomHint = BalloonHint1
     Center = True
     ParentShowHint = False
@@ -1062,6 +1069,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 192
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Relat'#243'rio de Contas a Pagar'
     CustomHint = BalloonHint1
     Center = True
@@ -1165,6 +1173,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 320
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Sistema'
     CustomHint = BalloonHint1
     Center = True
@@ -1376,6 +1385,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 320
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Navegador'
     CustomHint = BalloonHint1
     Center = True
@@ -1599,6 +1609,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 192
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Relat'#243'rio de Contas a Receber'
     CustomHint = BalloonHint1
     Center = True
@@ -1700,6 +1711,7 @@ object frmPrincipal: TfrmPrincipal
     Top = 192
     Width = 65
     Height = 73
+    Cursor = crHandPoint
     Hint = 'Relat'#243'rio de Lan'#231'amentos no Caixa'
     CustomHint = BalloonHint1
     Center = True

@@ -108,7 +108,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="modConexao.pas">
-            <Form>DataModule1</Form>
+            <Form>dmDados</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
@@ -116,6 +116,11 @@
             <Form>frmCadastroBasico</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="view\ufrmCadastroUsuarios.pas">
+            <Form>frmCadastroUsuarios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="classes\Ufuncoes.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

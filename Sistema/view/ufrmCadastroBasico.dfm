@@ -3,8 +3,8 @@ object frmCadastroBasico: TfrmCadastroBasico
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = 'Cadastro'
-  ClientHeight = 553
-  ClientWidth = 855
+  ClientHeight = 554
+  ClientWidth = 871
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,215 +20,193 @@ object frmCadastroBasico: TfrmCadastroBasico
   TextHeight = 13
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 540
-    Width = 855
+    Top = 541
+    Width = 871
     Height = 13
     Panels = <>
-    ExplicitTop = 488
-    ExplicitWidth = 834
   end
   object Panel1: TPanel
     Left = 0
-    Top = 492
-    Width = 855
-    Height = 48
+    Top = 489
+    Width = 871
+    Height = 52
     Align = alBottom
-    Caption = 'Panel1'
     TabOrder = 1
-    ExplicitTop = 440
-    ExplicitWidth = 834
-    object ActionToolBar1: TActionToolBar
-      Left = 1
-      Top = 5
-      Width = 853
-      Height = 42
-      ActionManager = ActionManagerCadastro
-      Align = alBottom
-      Caption = 'ActionToolBar1'
-      Color = clMenuBar
-      ColorMap.DisabledFontColor = 7171437
-      ColorMap.HighlightColor = clWhite
-      ColorMap.BtnSelectedFont = clBlack
-      ColorMap.UnusedColor = clWhite
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentFont = False
-      Spacing = 0
-      ExplicitLeft = 0
-      ExplicitTop = 6
+    object SpeedButton2: TSpeedButton
+      Left = 87
+      Top = 6
+      Width = 75
+      Height = 45
+      Action = acExcluir
+      Align = alCustom
+      DisabledImageIndex = 5
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
+    end
+    object SpeedButton3: TSpeedButton
+      Left = 312
+      Top = 1
+      Width = 75
+      Height = 45
+      Action = acSalvar
+      Align = alCustom
+      DisabledImageIndex = 13
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
+    end
+    object SpeedButton4: TSpeedButton
+      Left = 401
+      Top = 1
+      Width = 75
+      Height = 45
+      Action = acCancelar
+      Align = alCustom
+      DisabledImageIndex = 6
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
+    end
+    object SpeedButton5: TSpeedButton
+      Left = 546
+      Top = 6
+      Width = 75
+      Height = 45
+      Action = acPesquisar
+      Align = alCustom
+      DisabledImageIndex = 5
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
+    end
+    object SpeedButton6: TSpeedButton
+      Left = 698
+      Top = 6
+      Width = 75
+      Height = 45
+      Action = acImprimir
+      Align = alCustom
+      DisabledImageIndex = 5
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
+    end
+    object SpeedButton7: TSpeedButton
+      Left = 779
+      Top = 6
+      Width = 75
+      Height = 45
+      Action = acFechar
+      Align = alCustom
+      DisabledImageIndex = 5
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
+    end
+    object SpeedButton8: TSpeedButton
+      Left = 168
+      Top = 6
+      Width = 75
+      Height = 45
+      Action = acEditar
+      Align = alCustom
+      DisabledImageIndex = 5
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
+    end
+    object SpeedButton9: TSpeedButton
+      Left = 6
+      Top = 6
+      Width = 75
+      Height = 45
+      Action = acInserir
+      Align = alCustom
+      DisabledImageIndex = 5
+      Images = ImageListCadastro
+      Flat = True
+      ParentShowHint = False
+      ShowHint = False
     end
   end
-  object PageControl1: TPageControl
+  object pageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 855
-    Height = 258
+    Width = 871
+    Height = 489
     ActivePage = tbsPesquisa
-    Align = alTop
+    Align = alClient
     TabOrder = 2
+    object tbsPesquisa: TTabSheet
+      Caption = 'Pesquisa'
+      ImageIndex = 2
+      object Label1: TLabel
+        Left = 32
+        Top = 63
+        Width = 60
+        Height = 16
+        Caption = 'Pesquisar:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object btnFiltrar: TButton
+        Left = 225
+        Top = 60
+        Width = 75
+        Height = 25
+        Caption = 'Filtrar'
+        TabOrder = 0
+      end
+      object editPesquisar: TEdit
+        Left = 98
+        Top = 62
+        Width = 121
+        Height = 21
+        TabOrder = 1
+      end
+      object dbgDados: TDBGrid
+        Left = 0
+        Top = 200
+        Width = 863
+        Height = 261
+        Align = alBottom
+        DataSource = dsTabela
+        DrawingStyle = gdsGradient
+        TabOrder = 2
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+    end
     object tbsCadastro: TTabSheet
       Caption = 'Cadastro'
     end
-    object tbsPesquisa: TTabSheet
-      Caption = 'Pesquisa'
-      Highlighted = True
-      ImageIndex = 1
-      OnShow = tbsPesquisaShow
-    end
-  end
-  object Panel2: TPanel
-    Left = 0
-    Top = 256
-    Width = 854
-    Height = 236
-    Align = alCustom
-    Caption = 'Panel2'
-    TabOrder = 3
-    object DBGrid1: TDBGrid
-      AlignWithMargins = True
-      Left = 4
-      Top = 8
-      Width = 846
-      Height = 224
-      Align = alBottom
-      DataSource = dsTabela
-      DrawingStyle = gdsGradient
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'Tahoma'
-      TitleFont.Style = []
-    end
   end
   object dsTabela: TDataSource
-    DataSet = DataModule1.cdsCaixa
-    Left = 552
-    Top = 24
-  end
-  object ActionManagerCadastro: TActionManager
-    ActionBars = <
-      item
-        Items = <
-          item
-            Action = actInserir
-            Caption = '&Inserir'
-            ImageIndex = 5
-            ShortCut = 114
-          end
-          item
-            Action = actExcluir
-            Caption = '&Excluir'
-            ImageIndex = 15
-            ShortCut = 116
-          end
-          item
-            Action = actEditar
-            Caption = 'E&ditar'
-            ImageIndex = 2
-            ShortCut = 115
-          end
-          item
-            Action = actSalvar
-            Caption = '&Salvar'
-            ImageIndex = 13
-            ShortCut = 117
-          end
-          item
-            Action = actCancelar
-            Caption = '&Cancelar'
-            ImageIndex = 6
-            ShortCut = 113
-          end
-          item
-            Action = actPesquisar
-            Caption = '&Pesquisar'
-            ImageIndex = 4
-            ShortCut = 112
-          end
-          item
-            Action = actImprimir
-            Caption = 'I&mprimir'
-            ImageIndex = 14
-            ShortCut = 120
-          end
-          item
-            Action = actFechar
-            Caption = '&Fechar'
-            ImageIndex = 1
-            ShortCut = 16499
-          end>
-        ActionBar = ActionToolBar1
-      end>
-    Images = ImageListCadastro
-    Left = 452
-    Top = 32
-    StyleName = 'Platform Default'
-    object actInserir: TAction
-      Caption = 'Inserir'
-      ImageIndex = 5
-      ShortCut = 114
-      OnExecute = actInserirExecute
-      OnUpdate = actInserirUpdate
-    end
-    object actEditar: TAction
-      Caption = 'Editar'
-      Enabled = False
-      ImageIndex = 2
-      ShortCut = 115
-      OnExecute = actEditarExecute
-    end
-    object actExcluir: TAction
-      Caption = 'Excluir'
-      Enabled = False
-      ImageIndex = 15
-      ShortCut = 116
-      OnExecute = actExcluirExecute
-    end
-    object actSalvar: TAction
-      Caption = 'Salvar'
-      Enabled = False
-      ImageIndex = 13
-      ShortCut = 117
-      OnExecute = actSalvarExecute
-      OnUpdate = actSalvarUpdate
-    end
-    object actCancelar: TAction
-      Caption = 'Cancelar'
-      Enabled = False
-      ImageIndex = 6
-      ShortCut = 113
-      OnExecute = actCancelarExecute
-      OnUpdate = actCancelarUpdate
-    end
-    object actPesquisar: TAction
-      Caption = 'Pesquisar'
-      ImageIndex = 4
-      ShortCut = 112
-      OnExecute = actPesquisarExecute
-    end
-    object actImprimir: TAction
-      Caption = 'Imprimir'
-      Enabled = False
-      ImageIndex = 14
-      ShortCut = 120
-      OnExecute = actImprimirExecute
-    end
-    object actFechar: TAction
-      Caption = 'Fechar'
-      ImageIndex = 1
-      ShortCut = 16499
-      OnExecute = actFecharExecute
-    end
+    DataSet = dmDados.cdsCaixa
+    Left = 760
+    Top = 56
   end
   object ImageListCadastro: TImageList
     Height = 32
+    ShareImages = True
     Width = 32
-    Left = 628
-    Top = 40
+    Left = 612
+    Top = 56
     Bitmap = {
       494C010110001800040020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000A000000001002000000000000040
@@ -2880,7 +2858,58 @@ object frmCadastroBasico: TfrmCadastroBasico
   object ClientDataSet1: TClientDataSet
     Aggregates = <>
     Params = <>
-    Left = 692
-    Top = 40
+    Left = 524
+    Top = 56
+  end
+  object actAcoes: TActionList
+    Images = ImageListCadastro
+    Left = 688
+    Top = 51
+    object acInserir: TAction
+      Caption = 'Inserir'
+      ImageIndex = 5
+      OnExecute = acInserirExecute
+      OnUpdate = acInserirUpdate
+    end
+    object acEditar: TAction
+      Caption = 'Editar'
+      ImageIndex = 2
+      OnExecute = acEditarExecute
+      OnUpdate = acEditarUpdate
+    end
+    object acExcluir: TAction
+      Caption = 'Excluir'
+      ImageIndex = 15
+      OnExecute = acExcluirExecute
+      OnUpdate = acExcluirUpdate
+    end
+    object acSalvar: TAction
+      Caption = 'Salvar'
+      ImageIndex = 13
+      OnExecute = acSalvarExecute
+      OnUpdate = acSalvarUpdate
+    end
+    object acCancelar: TAction
+      Caption = 'Cancelar'
+      ImageIndex = 6
+      OnExecute = acCancelarExecute
+      OnUpdate = acCancelarUpdate
+    end
+    object acPesquisar: TAction
+      Caption = 'Pesquisar'
+      ImageIndex = 4
+      OnExecute = acPesquisarExecute
+    end
+    object acImprimir: TAction
+      Caption = 'Imprimir'
+      ImageIndex = 14
+      OnExecute = acImprimirExecute
+      OnUpdate = acImprimirUpdate
+    end
+    object acFechar: TAction
+      Caption = 'Fechar'
+      ImageIndex = 1
+      OnExecute = acFecharExecute
+    end
   end
 end

@@ -5,8 +5,10 @@ uses
   Uprincipal in 'Uprincipal.pas' {frmPrincipal},
   Vcl.Themes,
   Vcl.Styles,
-  modConexao in 'modConexao.pas' {DataModule1: TDataModule},
-  ufrmCadastroBasico in 'view\ufrmCadastroBasico.pas' {frmCadastroBasico};
+  modConexao in 'modConexao.pas' {dmDados: TDataModule},
+  ufrmCadastroBasico in 'view\ufrmCadastroBasico.pas' {frmCadastroBasico},
+  ufrmCadastroUsuarios in 'view\ufrmCadastroUsuarios.pas' {frmCadastroUsuarios},
+  Ufuncoes in 'classes\Ufuncoes.pas';
 
 {$R *.res}
 
@@ -15,6 +17,6 @@ begin
   Application.MainFormOnTaskbar := True;
   TStyleManager.TrySetStyle('Windows10 Dark');
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TdmDados, dmDados);
   Application.Run;
 end.

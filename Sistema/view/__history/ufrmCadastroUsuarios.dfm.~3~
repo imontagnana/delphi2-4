@@ -1,0 +1,50 @@
+inherited frmCadastroUsuarios: TfrmCadastroUsuarios
+  Caption = 'Cadastro de Usu'#225'rios'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pageControl1: TPageControl
+    ActivePage = tbsPesquisar
+    inherited tbsPesquisar: TTabSheet
+      inherited dbgDados: TDBGrid
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'id'
+            Width = 52
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'nome'
+            Width = 229
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'login'
+            Width = 181
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'senha'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'status'
+            Visible = False
+          end
+          item
+            Expanded = False
+            FieldName = 'dt_cadastro'
+            Width = 121
+            Visible = True
+          end>
+      end
+    end
+  end
+  inherited dsTabela: TDataSource
+    DataSet = DataModule1.cdsUsuarios
+  end
+end

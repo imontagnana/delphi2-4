@@ -1,4 +1,4 @@
-object DataModule1: TDataModule1
+object dmDados: TdmDados
   OldCreateOrder = False
   Height = 721
   Width = 553
@@ -38,12 +38,13 @@ object DataModule1: TDataModule1
       'BlobSize=-1'
       'ErrorResourceFile='
       'HostName=localhost')
+    Connected = True
     Left = 152
     Top = 40
   end
   object sdsCaixa: TSQLDataSet
     SchemaName = 'root'
-    CommandText = 'SELECT*FROM caixa'
+    CommandText = 'SELECT * FROM caixa'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = SQLConnection
@@ -93,7 +94,7 @@ object DataModule1: TDataModule1
   end
   object sdsContas_pagar: TSQLDataSet
     SchemaName = 'root'
-    CommandText = 'SELECT*FROM contas_pagar'
+    CommandText = 'SELECT * FROM contas_pagar'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = SQLConnection
@@ -171,7 +172,7 @@ object DataModule1: TDataModule1
   end
   object sdsContas_receber: TSQLDataSet
     SchemaName = 'root'
-    CommandText = 'SELECT*FROM contas_receber'
+    CommandText = 'SELECT * FROM contas_receber'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = SQLConnection
@@ -250,7 +251,7 @@ object DataModule1: TDataModule1
   end
   object sdsUsuarios: TSQLDataSet
     SchemaName = 'root'
-    CommandText = 'SELECT*FROM usuarios'
+    CommandText = 'SELECT * FROM usuarios'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = SQLConnection
@@ -259,26 +260,29 @@ object DataModule1: TDataModule1
   end
   object dspUsuarios: TDataSetProvider
     DataSet = sdsUsuarios
-    Constraints = False
     Left = 200
     Top = 384
   end
   object cdsUsuarios: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspUsuarios'
     Left = 352
     Top = 376
     object cdsUsuariosid: TIntegerField
+      DisplayLabel = 'ID'
       FieldName = 'id'
       Required = True
     end
     object cdsUsuariosnome: TStringField
+      DisplayLabel = 'Nome'
       FieldName = 'nome'
       Required = True
       Size = 50
     end
     object cdsUsuarioslogin: TStringField
+      DisplayLabel = 'Login'
       FieldName = 'login'
       Required = True
     end
@@ -293,6 +297,7 @@ object DataModule1: TDataModule1
       Size = 1
     end
     object cdsUsuariosdt_cadastro: TDateField
+      DisplayLabel = 'Data de cadastro'
       FieldName = 'dt_cadastro'
     end
   end
