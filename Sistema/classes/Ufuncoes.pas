@@ -10,6 +10,7 @@ uses
 
 function GetId(Campo, Tabela : string) : Integer;
 function GetLoginCadastrado (Login : string) : Boolean;
+procedure EditarDBGrid(DataSource : TDataSource; Sender : TDBGrid; State :TGridDrawState; Rect : TRect; Column : TColumn);
 implementation
 
 uses modConexao, ufrmCadastroUsuarios;
@@ -47,6 +48,19 @@ uses modConexao, ufrmCadastroUsuarios;
       Close;
       Free;
       end;
+     end;
+
+     procedure EditarDBGrid(DataSource : TDataSource; Sender : TDBGrid; State :TGridDrawState; Rect : TRect; Column : TColumn);
+     begin
+       if not odd(DataSource.DataSet.RecNo) then
+       begin
+         if not (gdSelected in state) then
+         begin
+           Sender.Canvas.Brush.Color := $454545;
+           Sender.Canvas.FillRect(Rect);
+           Sender.DefaultDrawDataCell(Rect,Column.Field,State);
+         end;
+       end;
      end;
 
 end.

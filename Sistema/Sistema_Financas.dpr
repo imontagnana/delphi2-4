@@ -8,7 +8,8 @@ uses
   modConexao in 'modConexao.pas' {dmDados: TDataModule},
   ufrmCadastroBasico in 'view\ufrmCadastroBasico.pas' {frmCadastroBasico},
   ufrmCadastroUsuarios in 'view\ufrmCadastroUsuarios.pas' {frmCadastroUsuarios},
-  Ufuncoes in 'classes\Ufuncoes.pas';
+  Ufuncoes in 'classes\Ufuncoes.pas',
+  ufrmCadastroCaixa in 'view\ufrmCadastroCaixa.pas' {frmCadastroCaixa};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   TStyleManager.TrySetStyle('Windows10 Dark');
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TdmDados, dmDados);
+  Application.CreateForm(TfrmCadastroCaixa, frmCadastroCaixa);
   Application.Run;
 end.

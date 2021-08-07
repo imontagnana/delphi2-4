@@ -54,10 +54,12 @@ object dmDados: TdmDados
   object dspCaixa: TDataSetProvider
     DataSet = sdsCaixa
     Constraints = False
+    Options = [poAllowCommandText, poUseQuoteChar]
     Left = 200
     Top = 144
   end
   object cdsCaixa: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspCaixa'
@@ -65,6 +67,7 @@ object dmDados: TdmDados
     Top = 144
     object cdsCaixaid: TIntegerField
       FieldName = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object cdsCaixanumero: TStringField
@@ -104,10 +107,12 @@ object dmDados: TdmDados
   object dspContas_pagar: TDataSetProvider
     DataSet = sdsContas_pagar
     Constraints = False
+    Options = [poAllowCommandText, poUseQuoteChar]
     Left = 200
     Top = 216
   end
   object cdsContas_pagar: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspContas_pagar'
@@ -115,6 +120,7 @@ object dmDados: TdmDados
     Top = 216
     object cdsContas_pagarid: TIntegerField
       FieldName = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object cdsContas_pagarnumero_doc: TStringField
@@ -182,10 +188,12 @@ object dmDados: TdmDados
   object dspContas_receber: TDataSetProvider
     DataSet = sdsContas_receber
     Constraints = False
+    Options = [poAllowCommandText, poUseQuoteChar]
     Left = 200
     Top = 296
   end
   object csdContas_receber: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspContas_receber'
@@ -193,6 +201,7 @@ object dmDados: TdmDados
     Top = 296
     object csdContas_receberid: TIntegerField
       FieldName = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object csdContas_receberdocumento: TStringField
@@ -260,8 +269,10 @@ object dmDados: TdmDados
   end
   object dspUsuarios: TDataSetProvider
     DataSet = sdsUsuarios
+    Constraints = False
+    Options = [poAllowCommandText, poUseQuoteChar]
     Left = 200
-    Top = 384
+    Top = 376
   end
   object cdsUsuarios: TClientDataSet
     Active = True
@@ -273,6 +284,7 @@ object dmDados: TdmDados
     object cdsUsuariosid: TIntegerField
       DisplayLabel = 'ID'
       FieldName = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object cdsUsuariosnome: TStringField

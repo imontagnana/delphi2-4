@@ -12,6 +12,9 @@ inherited frmCadastroUsuarios: TfrmCadastroUsuarios
   inherited pageControl1: TPageControl
     inherited tbsPesquisa: TTabSheet
       Cursor = crHandPoint
+      inherited btnFiltrar: TButton
+        OnClick = btnFiltrarClick
+      end
       inherited dbgDados: TDBGrid
         Columns = <
           item

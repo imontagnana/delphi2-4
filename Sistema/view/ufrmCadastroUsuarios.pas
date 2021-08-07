@@ -20,6 +20,8 @@ type
     edtSenha: TEdit;
     procedure acSalvarExecute(Sender: TObject);
     procedure acEditarExecute(Sender: TObject);
+    procedure btnFiltrarClick(Sender: TObject);
+    procedure acPesquisarExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,6 +43,14 @@ begin
   edtNome.Text := DmDados.cdsUsuariosnome.AsString;
   edtLogin.Text := DmDados.cdsUsuarioslogin.AsString;
   edtSenha.Text := DmDados.cdsUsuariossenha.AsString;
+end;
+
+procedure TfrmCadastroUsuarios.acPesquisarExecute(Sender: TObject);
+begin
+  inherited;
+  dmDados.cdsUsuarios.Close;
+  dmDados.cdsUsuarios.CommandText := 'SELECT * FROM USUARIOS';
+  dmDados.cdsUsuarios.Open;
 end;
 
 procedure TfrmCadastroUsuarios.acSalvarExecute(Sender: TObject);
@@ -85,4 +95,24 @@ begin
 
 end;
 
+procedure TfrmCadastrousuarios.btnfiltrarClick(Sender: TObject);
+begin
+ if edtPesquisar.Text = '' then
+
+ begin
+   Application.MessageBox('Informe um valor a ser pesquisado', 'Atenção', MB_OK+MB_ICONWARNING);
+   edtPesquisar.SetFocus;
+   Abort;
+ end;
+
+  inherited;
+  DmDados.cdsUsuarios.Close;
+  case cbxFiltros.ItemIndex of
+   0 : DmDados.cdsUsuarios.CommandText := 'SELECT * FROM USUARIOS WHERE NOME LIKE '+QuotedStr('%'+edtPesquisar.Text+'%');
+   1 : DmDados.cdsUsuarios.CommandText := 'SELECT * FROM USUARIOS WHERE LOGIN LIKE '+QuotedStr('%'+edtPesquisar.Text+'%');
+  end;
+  DmDados.cdsUsuarios.Open;
+end;
+
 end.
+

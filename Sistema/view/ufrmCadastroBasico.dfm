@@ -150,7 +150,20 @@ object frmCadastroBasico: TfrmCadastroBasico
       ImageIndex = 2
       object Label1: TLabel
         Left = 32
-        Top = 63
+        Top = 39
+        Width = 65
+        Height = 16
+        Caption = 'Selecionar:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 296
+        Top = 38
         Width = 60
         Height = 16
         Caption = 'Pesquisar:'
@@ -162,17 +175,17 @@ object frmCadastroBasico: TfrmCadastroBasico
         ParentFont = False
       end
       object btnFiltrar: TButton
-        Left = 225
-        Top = 60
+        Left = 505
+        Top = 58
         Width = 75
         Height = 25
         Caption = 'Filtrar'
         TabOrder = 0
       end
-      object editPesquisar: TEdit
-        Left = 98
-        Top = 62
-        Width = 121
+      object edtPesquisar: TEdit
+        Left = 296
+        Top = 60
+        Width = 203
         Height = 21
         TabOrder = 1
       end
@@ -190,6 +203,22 @@ object frmCadastroBasico: TfrmCadastroBasico
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnDrawColumnCell = dbgDadosDrawColumnCell
+      end
+      object cbxFiltros: TComboBoxEx
+        Left = 13
+        Top = 61
+        Width = 145
+        Height = 22
+        ItemsEx = <
+          item
+            Caption = 'Nome'
+          end
+          item
+            Caption = 'Login'
+          end>
+        Style = csExDropDownList
+        TabOrder = 3
       end
     end
     object tbsCadastro: TTabSheet
@@ -198,15 +227,15 @@ object frmCadastroBasico: TfrmCadastroBasico
   end
   object dsTabela: TDataSource
     DataSet = dmDados.cdsCaixa
-    Left = 760
-    Top = 56
+    Left = 832
+    Top = 288
   end
   object ImageListCadastro: TImageList
     Height = 32
     ShareImages = True
     Width = 32
-    Left = 612
-    Top = 56
+    Left = 828
+    Top = 392
     Bitmap = {
       494C010110001800040020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000A000000001002000000000000040
@@ -2858,13 +2887,13 @@ object frmCadastroBasico: TfrmCadastroBasico
   object ClientDataSet1: TClientDataSet
     Aggregates = <>
     Params = <>
-    Left = 524
-    Top = 56
+    Left = 828
+    Top = 440
   end
   object actAcoes: TActionList
     Images = ImageListCadastro
-    Left = 688
-    Top = 51
+    Left = 824
+    Top = 347
     object acInserir: TAction
       Caption = 'Inserir'
       ImageIndex = 5
