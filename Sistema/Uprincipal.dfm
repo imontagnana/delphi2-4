@@ -738,6 +738,7 @@ object frmPrincipal: TfrmPrincipal
       650041646F626520496D616765526561647971C9653C0000000049454E44AE42
       6082}
     ShowHint = True
+    OnClick = imgCaixaClick
   end
   object imgConReceber: TImage
     Left = 345

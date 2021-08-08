@@ -31,6 +31,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn1Click(Sender: TObject);
     procedure imgUsuariosClick(Sender: TObject);
+    procedure imgCaixaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,7 +45,7 @@ implementation
 
 {$R *.dfm}
 
-uses ufrmCadastroBasico, ufrmCadastroUsuarios;
+uses ufrmCadastroBasico, ufrmCadastroUsuarios, ufrmCadastroCaixa;
 
   // BOTÃO CADASTRAR
 procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
@@ -67,6 +68,17 @@ Application.Terminate
 else
 Abort;
 
+end;
+
+procedure TfrmPrincipal.imgCaixaClick(Sender: TObject);
+begin
+    frmCadastroCaixa := TfrmCadastroCaixa.Create(nil);
+
+  try
+    frmCadastroCaixa.ShowModal;
+  finally
+    FreeAndNil(frmCadastroCaixa);
+  end;
 end;
 
 procedure TfrmPrincipal.imgUsuariosClick(Sender: TObject);

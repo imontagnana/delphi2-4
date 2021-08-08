@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{79BA03B4-FF1A-44F3-8CDA-4A8DD302665B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\CursoDelphi2\Sistema\Sistema_Financas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\CursoDelphi2\Sistema\componentes\Componente TP\TPComponent.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Sistema_Financas">
+        <MSBuild Projects="..\CursoDelphi2\Sistema\Sistema_Financas.dproj"/>
+    </Target>
+    <Target Name="Sistema_Financas:Clean">
+        <MSBuild Projects="..\CursoDelphi2\Sistema\Sistema_Financas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Sistema_Financas:Make">
+        <MSBuild Projects="..\CursoDelphi2\Sistema\Sistema_Financas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TPComponent">
+        <MSBuild Projects="..\CursoDelphi2\Sistema\componentes\Componente TP\TPComponent.dproj"/>
+    </Target>
+    <Target Name="TPComponent:Clean">
+        <MSBuild Projects="..\CursoDelphi2\Sistema\componentes\Componente TP\TPComponent.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TPComponent:Make">
+        <MSBuild Projects="..\CursoDelphi2\Sistema\componentes\Componente TP\TPComponent.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Sistema_Financas;TPComponent"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Sistema_Financas:Clean;TPComponent:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Sistema_Financas:Make;TPComponent:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

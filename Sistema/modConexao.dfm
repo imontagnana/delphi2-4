@@ -66,31 +66,38 @@ object dmDados: TdmDados
     Left = 352
     Top = 144
     object cdsCaixaid: TIntegerField
+      DisplayLabel = 'Id'
       FieldName = 'id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
     object cdsCaixanumero: TStringField
+      DisplayLabel = 'Numero doc'
       FieldName = 'numero'
       Required = True
     end
     object cdsCaixadescricao: TStringField
+      DisplayLabel = 'Descricao'
       FieldName = 'descricao'
       Size = 200
     end
     object cdsCaixavalor: TFMTBCDField
+      DisplayLabel = 'Valor'
       FieldName = 'valor'
       Required = True
+      currency = True
       Precision = 20
       Size = 2
     end
     object cdsCaixatipo: TStringField
+      DisplayLabel = 'Tipo'
       FieldName = 'tipo'
       Required = True
       FixedChar = True
       Size = 1
     end
     object cdsCaixadt_cadastro: TDateField
+      DisplayLabel = 'Data cadastro'
       FieldName = 'dt_cadastro'
       Required = True
     end

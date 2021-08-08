@@ -106,12 +106,12 @@ begin
  end;
 
   inherited;
-  DmDados.cdsUsuarios.Close;
+  dmDados.cdsUsuarios.Close;
   case cbxFiltros.ItemIndex of
    0 : DmDados.cdsUsuarios.CommandText := 'SELECT * FROM USUARIOS WHERE NOME LIKE '+QuotedStr('%'+edtPesquisar.Text+'%');
    1 : DmDados.cdsUsuarios.CommandText := 'SELECT * FROM USUARIOS WHERE LOGIN LIKE '+QuotedStr('%'+edtPesquisar.Text+'%');
   end;
-  DmDados.cdsUsuarios.Open;
+  dmDados.cdsUsuarios.Open;
 end;
 
 end.
