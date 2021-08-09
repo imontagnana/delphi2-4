@@ -85,6 +85,7 @@ begin
      dmDados.cdsCaixadescricao.AsString := trim(edtDescricao.Text);
      dmDados.cdsCaixavalor.AsCurrency := StringParaFloat(edtValor.Text);
      dmDados.cdsCaixadt_cadastro.AsDateTime := now;
+
       case RadioGroup.ItemIndex of
       0 : dmDados.cdsCaixatipo.AsString := 'C';
       1 : dmDados.cdsCaixatipo.AsString := 'D';

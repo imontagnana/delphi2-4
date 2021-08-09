@@ -112,9 +112,9 @@ end;
 
 procedure TfrmCadastroBasico.acEditarUpdate(Sender: TObject);
 begin
-  if (dsTabela.State in [dsBrowse]) and (not TClientDataSet(dsTabela.DataSet).IsEmpty) then
+  if not TClientDataSet(dsTabela.DataSet).IsEmpty then
 
-  acEditar.Enabled := dsTabela.State in [dsBrowse];
+  acEditar.Enabled := true;
 end;
 
 procedure TfrmCadastroBasico.acExcluirExecute(Sender: TObject);
@@ -179,7 +179,6 @@ end;
 
 procedure TfrmCadastroBasico.acPesquisarExecute(Sender: TObject);
 begin
-    if PageControl1.ActivePage = tbsCadastro then
     PageControl1.ActivePage := tbsPesquisa;
 
     edtPesquisar.Clear;

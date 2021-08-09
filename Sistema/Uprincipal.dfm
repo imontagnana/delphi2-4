@@ -188,7 +188,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 65
     Height = 73
     Cursor = crHandPoint
-    Hint = 'Contas a pagar'
+    Hint = 'Contas a receber'
     CustomHint = BalloonHint1
     Center = True
     ParentShowHint = False
@@ -356,7 +356,7 @@ object frmPrincipal: TfrmPrincipal
     Width = 65
     Height = 73
     Cursor = crHandPoint
-    Hint = 'Contas a receber'
+    Hint = 'Contas a pagar'
     CustomHint = BalloonHint1
     Center = True
     ParentShowHint = False
@@ -593,6 +593,7 @@ object frmPrincipal: TfrmPrincipal
       9F0000001974455874536F6674776172650041646F626520496D616765526561
       647971C9653C0000000049454E44AE426082}
     ShowHint = True
+    OnClick = imgPagarClick
   end
   object imgCaixa: TImage
     Left = 266

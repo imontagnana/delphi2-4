@@ -1,0 +1,111 @@
+unit ufrmCadastroPagar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ufrmCadastroBasico, Data.DB,
+  System.Actions, Vcl.ActnList, Datasnap.DBClient, System.ImageList,
+  Vcl.ImgList, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons,
+  Vcl.ExtCtrls, tpEdit;
+
+type
+  TfrmCadastropagar = class(TfrmCadastroBasico)
+    Label2: TLabel;
+    edtDocumento: TEdit;
+    Label3: TLabel;
+    edtDescricao: TEdit;
+    Label4: TLabel;
+    edtQtdeParcelas: TEdit;
+    Label5: TLabel;
+    edtVlrCompra: TtpEdit;
+    Label7: TLabel;
+    edtDtCompra: TtpEdit;
+    edtVariacao: TEdit;
+    Label8: TLabel;
+    cdsParcelas: TClientDataSet;
+    DBGrid1: TDBGrid;
+    dsParcelas: TDataSource;
+    btnGerarparcela: TBitBtn;
+    cdsParcelasParcela: TIntegerField;
+    cdsParcelasValor: TCurrencyField;
+    cdsParcelasVencimento: TDateField;
+    BitBtn2: TBitBtn;
+    procedure btnGerarparcelaClick(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastropagar: TfrmCadastropagar;
+
+implementation
+
+{$R *.dfm}
+
+uses modConexao, Ufuncoes;
+
+procedure TfrmCadastropagar.BitBtn2Click(Sender: TObject);
+begin
+
+  cdsParcelas.EmptyDataSet;
+
+end;
+
+procedure TfrmCadastropagar.btnGerarparcelaClick(Sender: TObject);
+  var I : Integer;
+begin
+
+  if edtDocumento.Text = '' then
+     begin
+     Application.MessageBox('Preencha o campo Documento!', 'Atenção', MB_OK+MB_ICONWARNING);
+     edtDocumento.SetFocus;
+     Abort;
+     end;
+
+  if edtDescricao.Text = '' then
+     begin
+     Application.MessageBox('Preencha o campo Descrição!', 'Atenção', MB_OK+MB_ICONWARNING);
+     edtDescricao.SetFocus;
+     Abort;
+     end;
+
+  if edtQtdeParcelas.Text = '' then
+     begin
+     Application.MessageBox('Preencha o campo Quantidade de Parecelas!', 'Atenção', MB_OK+MB_ICONWARNING);
+     edtQtdeParcelas.SetFocus;
+     Abort;
+     end;
+
+  if StringParaFloat(edtVlrCompra.Text) = 0 then
+     begin
+     Application.MessageBox('Preencha o Valor da Compra!', 'Atenção', MB_OK+MB_ICONWARNING);
+     edtVlrCompra.SetFocus;
+     Abort;
+     end;
+
+  if edtDtCompra.Text = '' then
+     begin
+     Application.MessageBox('Preencha o campo Data da Compra!', 'Atenção', MB_OK+MB_ICONWARNING);
+     edtDtCompra.SetFocus;
+     Abort;
+     end;
+
+    cdsParcelas.EmptyDataSet;
+
+  for I := 1 to StrToInt(edtQtdeParcelas.Text) do
+      begin
+      cdsParcelas.Insert;
+      cdsParcelasParcela.AsInteger := i;
+      cdsParcelasValor.AsCurrency := StringParaFloat(edtVlrCompra.Text) / StrToInt(edtQtdeParcelas.Text);
+      cdsParcelasVencimento.AsDateTime := StrToDate(edtDtCompra.Text) + (StrToInt(edtVariacao.Text) * i);
+      cdsParcelas.Post;
+      end;
+
+end;
+
+
+end.

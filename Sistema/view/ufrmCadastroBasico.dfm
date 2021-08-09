@@ -39,7 +39,7 @@ object frmCadastroBasico: TfrmCadastroBasico
       Height = 45
       Action = acExcluir
       Align = alCustom
-      DisabledImageIndex = 5
+      DisabledImageIndex = 15
       Images = ImageListCadastro
       Flat = True
       ParentShowHint = False
@@ -47,7 +47,7 @@ object frmCadastroBasico: TfrmCadastroBasico
     end
     object SpeedButton3: TSpeedButton
       Left = 312
-      Top = 1
+      Top = 6
       Width = 75
       Height = 45
       Action = acSalvar
@@ -60,7 +60,7 @@ object frmCadastroBasico: TfrmCadastroBasico
     end
     object SpeedButton4: TSpeedButton
       Left = 401
-      Top = 1
+      Top = 6
       Width = 75
       Height = 45
       Action = acCancelar
@@ -117,7 +117,7 @@ object frmCadastroBasico: TfrmCadastroBasico
       Height = 45
       Action = acEditar
       Align = alCustom
-      DisabledImageIndex = 5
+      DisabledImageIndex = 10
       Images = ImageListCadastro
       Flat = True
       ParentShowHint = False
@@ -223,6 +223,7 @@ object frmCadastroBasico: TfrmCadastroBasico
     end
     object tbsCadastro: TTabSheet
       Caption = 'Cadastro'
+      TabVisible = False
     end
   end
   object dsTabela: TDataSource
@@ -2896,30 +2897,35 @@ object frmCadastroBasico: TfrmCadastroBasico
     Top = 347
     object acInserir: TAction
       Caption = 'Inserir'
+      Enabled = False
       ImageIndex = 5
       OnExecute = acInserirExecute
       OnUpdate = acInserirUpdate
     end
     object acEditar: TAction
       Caption = 'Editar'
+      Enabled = False
       ImageIndex = 2
       OnExecute = acEditarExecute
       OnUpdate = acEditarUpdate
     end
     object acExcluir: TAction
       Caption = 'Excluir'
+      Enabled = False
       ImageIndex = 15
       OnExecute = acExcluirExecute
       OnUpdate = acExcluirUpdate
     end
     object acSalvar: TAction
       Caption = 'Salvar'
+      Enabled = False
       ImageIndex = 13
       OnExecute = acSalvarExecute
       OnUpdate = acSalvarUpdate
     end
     object acCancelar: TAction
       Caption = 'Cancelar'
+      Enabled = False
       ImageIndex = 6
       OnExecute = acCancelarExecute
       OnUpdate = acCancelarUpdate

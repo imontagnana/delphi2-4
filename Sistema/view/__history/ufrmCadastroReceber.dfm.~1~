@@ -1,0 +1,5 @@
+inherited frmCadastroBasico1: TfrmCadastroBasico1
+  Caption = 'frmCadastroBasico1'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

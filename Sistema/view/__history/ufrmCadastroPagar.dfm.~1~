@@ -1,0 +1,5 @@
+inherited frmCadastropagar: TfrmCadastropagar
+  Caption = 'Cadastro de Contas a Pagar'
+  PixelsPerInch = 96
+  TextHeight = 13
+end
