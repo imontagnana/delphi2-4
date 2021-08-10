@@ -3,7 +3,6 @@ inherited frmCadastropagar: TfrmCadastropagar
   PixelsPerInch = 96
   TextHeight = 13
   inherited pageControl1: TPageControl
-    ActivePage = tbsCadastro
     inherited tbsPesquisa: TTabSheet
       inherited Label1: TLabel
         Top = 23

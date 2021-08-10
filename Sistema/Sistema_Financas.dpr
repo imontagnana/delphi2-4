@@ -11,7 +11,8 @@ uses
   Ufuncoes in 'classes\Ufuncoes.pas',
   ufrmCadastroCaixa in 'view\ufrmCadastroCaixa.pas' {frmCadastroCaixa},
   ufrmCadastroPagar in 'view\ufrmCadastroPagar.pas' {frmCadastropagar},
-  ufrmCadastroReceber in 'view\ufrmCadastroReceber.pas' {frmCadastroReceber};
+  ufrmCadastroReceber in 'view\ufrmCadastroReceber.pas' {frmCadastroReceber},
+  udmRelatorios in 'datamodule\udmRelatorios.pas' {dmrelatorios: TDataModule};
 
 {$R *.res}
 

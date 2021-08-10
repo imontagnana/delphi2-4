@@ -178,7 +178,7 @@ begin
 
   dmDados.cdsContas_pagar.Close;
   case cbxFiltros.ItemIndex of
-   0 : DmDados.cdsContas_pagar.CommandText := 'SELECT * FROM CONTAS_PAGAR WHERE DOCUMENTO LIKE '+QuotedStr('%'+edtPesquisar.Text+'%');
+   0 : DmDados.cdsContas_pagar.CommandText := 'SELECT * FROM CONTAS_PAGAR WHERE NUMERO_DOC LIKE '+QuotedStr('%'+edtPesquisar.Text+'%');
    1 : DmDados.cdsContas_pagar.CommandText := 'SELECT * FROM CONTAS_PAGAR WHERE DESCRICAO LIKE '+QuotedStr('%'+edtPesquisar.Text+'%');
   end;
   dmDados.cdsContas_pagar.Open;

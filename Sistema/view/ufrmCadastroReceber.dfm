@@ -3,7 +3,6 @@ inherited frmCadastroReceber: TfrmCadastroReceber
   PixelsPerInch = 96
   TextHeight = 13
   inherited pageControl1: TPageControl
-    ActivePage = tbsCadastro
     inherited tbsPesquisa: TTabSheet
       object Label9: TLabel [2]
         Left = 13
@@ -11,6 +10,9 @@ inherited frmCadastroReceber: TfrmCadastroReceber
         Width = 176
         Height = 13
         Caption = 'Status: Cancelado, Ativo ou Baixado'
+      end
+      inherited btnFiltrar: TButton
+        OnClick = btnFiltrarClick
       end
       inherited dbgDados: TDBGrid
         Columns = <
@@ -83,10 +85,10 @@ inherited frmCadastroReceber: TfrmCadastroReceber
       inherited cbxFiltros: TComboBoxEx
         ItemsEx = <
           item
-            Caption = 'Descricao'
+            Caption = 'Documento'
           end
           item
-            Caption = 'Documento'
+            Caption = 'Descricao'
           end>
       end
     end
@@ -165,7 +167,7 @@ inherited frmCadastroReceber: TfrmCadastroReceber
         Height = 21
         Alignment = taRightJustify
         CharCase = ecUpperCase
-        TabOrder = 3
+        TabOrder = 4
         Text = '0,00'
         Caracter = tcReal
       end
@@ -177,7 +179,7 @@ inherited frmCadastroReceber: TfrmCadastroReceber
         Alignment = taRightJustify
         CharCase = ecUpperCase
         MaxLength = 8
-        TabOrder = 4
+        TabOrder = 5
         Check = ckDate
         Caracter = tcNumeric
       end
@@ -187,7 +189,7 @@ inherited frmCadastroReceber: TfrmCadastroReceber
         Width = 77
         Height = 21
         NumbersOnly = True
-        TabOrder = 5
+        TabOrder = 3
       end
       object DBGrid1: TDBGrid
         Left = 108
@@ -198,7 +200,7 @@ inherited frmCadastroReceber: TfrmCadastroReceber
         DrawingStyle = gdsGradient
         GradientStartColor = clGradientInactiveCaption
         Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-        TabOrder = 6
+        TabOrder = 7
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
@@ -231,7 +233,8 @@ inherited frmCadastroReceber: TfrmCadastroReceber
         Width = 75
         Height = 25
         Caption = 'Gerar parcelas'
-        TabOrder = 7
+        TabOrder = 6
+        OnClick = btnGerarparcelaClick
       end
       object BitBtn2: TBitBtn
         Left = 267
@@ -240,11 +243,12 @@ inherited frmCadastroReceber: TfrmCadastroReceber
         Height = 25
         Caption = 'Limpar parcelas'
         TabOrder = 8
+        OnClick = BitBtn2Click
       end
     end
   end
   inherited dsTabela: TDataSource
-    DataSet = dmDados.csdContas_receber
+    DataSet = dmDados.cdsContas_receber
   end
   inherited ClientDataSet1: TClientDataSet
     Left = 756

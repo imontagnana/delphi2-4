@@ -210,35 +210,35 @@ object dmDados: TdmDados
     Left = 200
     Top = 296
   end
-  object csdContas_receber: TClientDataSet
+  object cdsContas_receber: TClientDataSet
     Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspContas_receber'
     Left = 352
-    Top = 296
-    object csdContas_receberid: TIntegerField
+    Top = 304
+    object cdsContas_receberid: TIntegerField
       DisplayLabel = 'Id'
       FieldName = 'id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object csdContas_receberdocumento: TStringField
+    object cdsContas_receberdocumento: TStringField
       DisplayLabel = 'Documento'
       FieldName = 'documento'
       Required = True
     end
-    object csdContas_receberdescricao: TStringField
+    object cdsContas_receberdescricao: TStringField
       DisplayLabel = 'Descricao'
       FieldName = 'descricao'
       Size = 200
     end
-    object csdContas_receberparcela: TIntegerField
+    object cdsContas_receberparcela: TIntegerField
       DisplayLabel = 'Parcela'
       FieldName = 'parcela'
       Required = True
     end
-    object csdContas_recebervlr_parcela: TFMTBCDField
+    object cdsContas_recebervlr_parcela: TFMTBCDField
       DisplayLabel = 'valor parcela'
       FieldName = 'vlr_parcela'
       Required = True
@@ -246,7 +246,7 @@ object dmDados: TdmDados
       Precision = 20
       Size = 2
     end
-    object csdContas_recebervlr_compra: TFMTBCDField
+    object cdsContas_recebervlr_compra: TFMTBCDField
       DisplayLabel = 'valor compra'
       FieldName = 'vlr_compra'
       Required = True
@@ -254,7 +254,7 @@ object dmDados: TdmDados
       Precision = 20
       Size = 2
     end
-    object csdContas_recebervlr_abatido: TFMTBCDField
+    object cdsContas_recebervlr_abatido: TFMTBCDField
       DisplayLabel = 'valor abatido'
       FieldName = 'vlr_abatido'
       Required = True
@@ -262,29 +262,29 @@ object dmDados: TdmDados
       Precision = 20
       Size = 2
     end
-    object csdContas_receberdt_compra: TDateField
+    object cdsContas_receberdt_compra: TDateField
       DisplayLabel = 'data compra'
       FieldName = 'dt_compra'
       Required = True
     end
-    object csdContas_receberdt_vencimento: TDateField
+    object cdsContas_receberdt_vencimento: TDateField
       DisplayLabel = 'data vencimento'
       FieldName = 'dt_vencimento'
       Required = True
     end
-    object csdContas_receberdt_cadastro: TDateField
+    object cdsContas_receberdt_cadastro: TDateField
       DisplayLabel = 'data cadastro'
       FieldName = 'dt_cadastro'
       Required = True
     end
-    object csdContas_receberstatus: TStringField
+    object cdsContas_receberstatus: TStringField
       DisplayLabel = 'Status'
       FieldName = 'status'
       Required = True
       FixedChar = True
       Size = 10
     end
-    object csdContas_receberdt_pagamento: TStringField
+    object cdsContas_receberdt_pagamento: TStringField
       DisplayLabel = 'data pagamento'
       FieldName = 'dt_pagamento'
       FixedChar = True
